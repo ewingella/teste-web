@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Grid — Playgrounds réunis</title>
+  <link rel="stylesheet" href="grid-playgrounds.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Grid — Playgrounds réunis</h1>
+    <nav>
+      <a href="#demo-fr">A — fr</a>
+      <a href="#demo-fixed-fr-gap">B — fixe + fr + gap</a>
+      <a href="#demo-gap">C — gap</a>
+      <a href="#demo-minmax">D — minmax</a>
+      <a href="#demo-fit">E — fit-content</a>
+      <a href="#demo-minmaxcontent">F — min/max-content</a>
+      <a href="#demo-areas">G — template-areas</a>
+      <a href="#demo-autofitfill">H — auto-fit vs auto-fill</a>
+    </nav>
+  </header>
+  <main>
+    <section id="demo-fr">
+      <h2>A — Répartition avec <code>fr</code></h2>
+      <div class="grid demo-fr">
+        <div class="box">1fr</div>
+        <div class="box">2fr (≈ 2× la 1ʳᵉ)</div>
+      </div>
+      <p class="hint">Astuce : redimensionnez la fenêtre pour observer la répartition de l’espace restant.</p>
+    </section>
+
+    <section id="demo-fixed-fr-gap">
+      <h2>B — Mix fixe + <code>fr</code> + <code>gap</code></h2>
+      <div class="grid demo-fixed-fr-gap">
+        <div class="box">150px fixe</div>
+        <div class="box">1fr</div>
+        <div class="box">1fr</div>
+      </div>
+    </section>
+
+    <section id="demo-gap">
+      <h2>C — <code>gap</code> (une ou deux valeurs)</h2>
+      <h3>Le même <code>gap</code> sur les deux axes</h3>
+      <div class="grid demo-gap same">
+        <div class="box">A</div><div class="box">B</div><div class="box">C</div>
+      </div>
+      <h3>Lignes ≠ Colonnes via le raccourci</h3>
+      <div class="grid demo-gap diff">
+        <div class="box">A</div><div class="box">B</div><div class="box">C</div>
+      </div>
+    </section>
+
+    <section id="demo-minmax">
+      <h2>D — <code>minmax(150px, 1fr)</code></h2>
+      <div class="grid demo-minmax">
+        <div class="box">min 150px / max 1fr</div>
+        <div class="box">min 150px / max 1fr</div>
+        <div class="box">min 150px / max 1fr</div>
+      </div>
+    </section>
+
+    <section id="demo-fit">
+      <h2>E — <code>fit-content(max)</code></h2>
+      <div class="grid demo-fit">
+        <div class="box nowrap">Texte trèèès long qui ne doit pas dépasser 300px…</div>
+        <div class="box">Colonne fluide</div>
+      </div>
+    </section>
+
+    <section id="demo-minmaxcontent">
+      <h2>F — <code>min-content</code> vs <code>max-content</code></h2>
+      <div class="grid demo-minmaxcontent">
+        <div class="box nowrap">UnMotTrèsTrèsLongSansCoupure</div>
+        <div class="box">Colonne centrale fluide</div>
+        <div class="box nowrap">UnMotTrèsTrèsLongSansCoupure</div>
+      </div>
+    </section>
+
+    <section id="demo-areas">
+      <h2>G — <code>grid-template-areas</code> (layout simple)</h2>
+      <div class="grid demo-areas">
+        <header>En‑tête</header>
+        <nav>Navigation</nav>
+        <main>Contenu principal</main>
+        <aside>Aside</aside>
+        <footer>Pied de page</footer>
+      </div>
+    </section>
+
+    <section id="demo-autofitfill">
+      <h2>H — <code>auto-fit</code> vs <code>auto-fill</code> (galerie responsive)</h2>
+      <div class="wrap">
+        <section class="gallery fit">
+          <div class="card">auto-fit 1</div>
+          <div class="card">auto-fit 2</div>
+          <div class="card">auto-fit 3</div>
+          <div class="card">auto-fit 4</div>
+        </section>
+        <section class="gallery fill">
+          <div class="card">auto-fill 1</div>
+          <div class="card">auto-fill 2</div>
+          <div class="card">auto-fill 3</div>
+          <div class="card">auto-fill 4</div>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
