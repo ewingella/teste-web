@@ -32,6 +32,9 @@
     <section class="section">
       <h2>G — <code>grid-template-areas</code></h2>
       <p class="explain">Disposition déclarative : donnez des noms aux zones pour exprimer visuellement le layout.</p>
+      
+      <p><span style="color: #b7e7c8;">●</span> <strong>header</strong> | <span style="color: #cacaFF;">●</span> <strong>nav</strong> | <span style="color: #f2e2a2;">●</span> <strong>main</strong> | <span style="color: #f3c0dc;">●</span> <strong>aside</strong> | <span style="color: #bfd8ff;">●</span> <strong>footer</strong></p>
+      
       <div class="demo demo-areas">
         <header>En‑tête</header>
         <nav>Navigation</nav>
@@ -54,13 +57,21 @@
     </div>
     <button class="btn-toggle" data-target="template-areas-css">Voir le code</button>
     <div class="code-block" id="template-areas-css">
-      <pre><code>.demo-areas{ display:grid; grid-template-columns:1fr 3fr 1fr; grid-template-rows:auto 1fr auto; gap:12px;
-  grid-template-areas:&quot;header header header&quot; &quot;nav main aside&quot; &quot;footer footer footer&quot;; }
-.demo-areas header{ grid-area:header; }
-.demo-areas nav{ grid-area:nav; }
-.demo-areas main{ grid-area:main; }
-.demo-areas aside{ grid-area:aside; }
-.demo-areas footer{ grid-area:footer; }</code></pre>
+      <pre><code>.demo-areas{ 
+  display: grid; 
+  grid-template-columns: 1fr 3fr 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  gap: 12px;
+  grid-template-areas: 
+    "header header header" 
+    "nav main aside" 
+    "footer footer footer"; 
+}
+.demo-areas header{ grid-area: header; background: #dff7e8; border: 1px solid #b7e7c8; }
+.demo-areas nav{ grid-area: nav; background: #e8e8ff; border: 1px solid #cacaFF; }
+.demo-areas main{ grid-area: main; background: #fffbe6; border: 1px solid #f2e2a2; }
+.demo-areas aside{ grid-area: aside; background: #fdeef6; border: 1px solid #f3c0dc; }
+.demo-areas footer{ grid-area: footer; background: #e6f2ff; border: 1px solid #bfd8ff; }</code></pre>
     </div>
     
     <a class="back" href="../index.html">← Retour à l’index</a>
