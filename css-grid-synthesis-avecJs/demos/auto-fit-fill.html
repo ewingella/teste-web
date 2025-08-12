@@ -36,14 +36,14 @@
         <section class="gallery fit">
           <div class="card">auto-fit 1</div>
           <div class="card">auto-fit 2</div>
-          <div class="card">auto-fit 3</div>
-          <div class="card">auto-fit 4</div>
+          <!-- <div class="card">auto-fit 3</div>
+          <div class="card">auto-fit 4</div> -->
         </section>
         <section class="gallery fill">
           <div class="card">auto-fill 1</div>
           <div class="card">auto-fill 2</div>
-          <div class="card">auto-fill 3</div>
-          <div class="card">auto-fill 4</div>
+          <!-- <div class="card">auto-fill 3</div>
+          <div class="card">auto-fill 4</div> -->
         </section>
       </div>
     </section>
@@ -53,19 +53,16 @@
       <pre><code>&lt;section class=&quot;gallery fit&quot;&gt;
   &lt;div class=&quot;card&quot;&gt;auto-fit 1&lt;/div&gt;
   &lt;div class=&quot;card&quot;&gt;auto-fit 2&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;auto-fit 3&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;auto-fit 4&lt;/div&gt;
 &lt;/section&gt;
 &lt;section class=&quot;gallery fill&quot;&gt;
   &lt;div class=&quot;card&quot;&gt;auto-fill 1&lt;/div&gt;
   &lt;div class=&quot;card&quot;&gt;auto-fill 2&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;auto-fill 3&lt;/div&gt;
-  &lt;div class=&quot;card&quot;&gt;auto-fill 4&lt;/div&gt;
 &lt;/section&gt;</code></pre>
     </div>
     <button class="btn-toggle" data-target="auto-fit-fill-css">Voir le code</button>
     <div class="code-block" id="auto-fit-fill-css">
-      <pre><code>.gallery{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); }
+      <pre><code>.gallery{ display:grid; gap:12px; flex:1 1 320px; border:1px solid var(--bd); padding:var(--pad); background:#fff; max-width:600px; }
+.gallery.fit{ grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); }
 .gallery.fill{ grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); }</code></pre>
     </div>
     

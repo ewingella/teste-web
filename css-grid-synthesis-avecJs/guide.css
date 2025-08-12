@@ -1,4 +1,3 @@
-
 :root{
   --ink:#0f172a; --muted:#475569; --bg:#ffffff; --bd:#e3e7ef;
   --panel:#f6f7f9; --pad:12px; --radius:12px;
@@ -61,8 +60,9 @@ body{ font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
 
 /* H — auto-fit vs auto-fill */
 .flex-wrap{ display:flex; gap:16px; flex-wrap:wrap; }
-.gallery{ display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); flex:1 1 320px; border:1px solid var(--bd); padding:var(--pad); background:#fff; }
-.gallery.fill{ grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); }
+.gallery{ display:grid; gap:12px; flex:1 1 320px; border:1px solid var(--bd); padding:var(--pad); background:#fff; max-width:600px; }
+.gallery.fit { grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); }
+.gallery.fill { grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); }
 .card{ background:#f4f4f4; height:80px; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center; }
 
 /* I — grid-auto-flow: column */
