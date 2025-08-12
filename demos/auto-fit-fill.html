@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Grid — auto-fit-fill</title>
+  <link rel="stylesheet" href="../guide.css" />
+  <script src="../guide.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>CSS Grid — auto-fit-fill</h1>
+    <p>Projet de synthèse — CSS Grid : démos structurées + explications.</p>
+    
+    <div class="nav">
+      <a href="../index.html">Accueil</a>
+      <a href="fr.html">A — fr</a>
+      <a href="fixed-fr-gap.html">B — fixe + fr + gap</a>
+      <a href="gap.html">C — gap</a>
+      <a href="minmax.html">D — minmax</a>
+      <a href="fit-content.html">E — fit-content</a>
+      <a href="min-max-content.html">F — min/max-content</a>
+      <a href="template-areas.html">G — template-areas</a>
+      <a href="auto-fit-fill.html">H — auto-fit vs auto-fill</a>
+      <a href="auto-flow-column.html">I — auto-flow: column</a>
+      <a href="alignment.html">J — alignements</a>
+    </div>
+    
+  </header>
+  <main class="page">
+    
+    <section class="section">
+      <h2>H — <code>auto-fit</code> vs <code>auto-fill</code></h2>
+      <p class="explain"><code>auto-fit</code> compacte les "pistes vides" ; <code>auto-fill</code> garde le gabarit de pistes, même si elles sont vides.</p>
+      
+      <p><span style="color: #4ecdc4;">●</span> <strong>auto-fit</strong> : compacte l'espace | <span style="color: #ff6b6b;">●</span> <strong>auto-fill</strong> : préserve les colonnes vides</p>
+      
+      <div class="section demo flex-wrap">
+        <section class="gallery fit">
+          <div class="card">auto-fit 1</div>
+          <div class="card">auto-fit 2</div>
+        </section>
+        <section class="gallery fill">
+          <div class="card">auto-fill 1</div>
+          <div class="card">auto-fill 2</div>
+        </section>
+      </div>
+      
+      <p class="note">Redimensionnez la fenêtre pour voir comment <code>auto-fit</code> étend les cartes vs <code>auto-fill</code> qui garde l'espace pour les colonnes vides.</p>
+    </section>
+    
+    <button class="btn-toggle" data-target="auto-fit-fill-html">Voir le code HTML</button>
+    <div class="code-block" id="auto-fit-fill-html">
+      <pre><code>&lt;section class=&quot;gallery fit&quot;&gt;
+  &lt;div class=&quot;card&quot;&gt;auto-fit 1&lt;/div&gt;
+  &lt;div class=&quot;card&quot;&gt;auto-fit 2&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class=&quot;gallery fill&quot;&gt;
+  &lt;div class=&quot;card&quot;&gt;auto-fill 1&lt;/div&gt;
+  &lt;div class=&quot;card&quot;&gt;auto-fill 2&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+    <button class="btn-toggle" data-target="auto-fit-fill-css">Voir le code CSS</button>
+    <div class="code-block" id="auto-fit-fill-css">
+      <pre><code>.gallery{ 
+  display: grid; 
+  gap: 12px; 
+  flex: 1 1 320px; 
+  border: 1px solid var(--bd); 
+  padding: var(--pad); 
+  background: #fff; 
+  max-width: 600px; 
+}
+.gallery.fit{ 
+  grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); 
+  background: #f0f9ff; 
+  border-color: #bfe7ff;
+}
+.gallery.fill{ 
+  grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); 
+  background: #fff3f3; 
+  border-color: #ffd1d1;
+}</code></pre>
+    </div>
+    
+    <a class="back" href="../index.html">← Retour à l'index</a>
+  </main>
+</body>
+</html>
