@@ -33,23 +33,23 @@
       <h2>F — <code>min-content</code> vs <code>max-content</code></h2>
       <p class="explain"><code>min-content</code> tend à contracter jusqu'au point où le contenu ne déborde pas ; <code>max-content</code> prend la largeur nécessaire pour ne rien couper.</p>
       
-      <p><strong>min-content :</strong> se contracte au minimum</p>
-      <p><strong>1fr :</strong> prend l'espace restant disponible</p>
-      <p><strong>max-content :</strong> prend toute la largeur nécessaire</p>
+      <p><span style="color: #ff6b6b;">●</span> <strong>min-content</strong> | <span style="color: #4ecdc4;">●</span> <strong>1fr</strong> | <span style="color: #a8a8ff;">●</span> <strong>max-content</strong></p>
       
       <div class="demo demo-minmaxcontent">
-        <div class="box">Texte court min-content</div>
-        <div class="box">Colonne centrale fluide</div>
-        <div class="box">Texte beaucoup plus long qui illustre parfaitement le comportement de max-content en prenant toute la largeur nécessaire</div>
+        <div class="box">min-content : Texte long qui se contracte au minimum nécessaire</div>
+        <div class="box">1fr : Colonne centrale fluide</div>
+        <div class="box">max-content : Texte long qui prend toute la largeur nécessaire sans retour à la ligne</div>
       </div>
+      
+      <p class="note">Redimensionnez la fenêtre pour voir comment chaque colonne réagit différemment.</p>
     </section>
     
     <button class="btn-toggle" data-target="min-max-content-html">Voir le code</button>
     <div class="code-block" id="min-max-content-html">
       <pre><code>&lt;div class=&quot;demo demo-minmaxcontent&quot;&gt;
-  &lt;div class=&quot;box&quot;&gt;Texte court min-content&lt;/div&gt;
-  &lt;div class=&quot;box&quot;&gt;Colonne centrale fluide&lt;/div&gt;
-  &lt;div class=&quot;box&quot;&gt;Texte beaucoup plus long qui illustre parfaitement le comportement de max-content en prenant toute la largeur nécessaire&lt;/div&gt;
+  &lt;div class=&quot;box&quot;&gt;min-content : Texte long qui se contracte au minimum nécessaire&lt;/div&gt;
+  &lt;div class=&quot;box&quot;&gt;1fr : Colonne centrale fluide&lt;/div&gt;
+  &lt;div class=&quot;box&quot;&gt;max-content : Texte long qui prend toute la largeur nécessaire sans retour à la ligne&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
     <button class="btn-toggle" data-target="min-max-content-css">Voir le code</button>
