@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Grid — template-areas</title>
+  <link rel="stylesheet" href="../guide.css" />
+  <script src="../guide.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>CSS Grid — template-areas</h1>
+    <p>Projet de synthèse — CSS Grid : démos structurées + explications.</p>
+    
+    <div class="nav">
+      <a href="../index.html">Accueil</a>
+      <a href="fr.html">A — fr</a>
+      <a href="fixed-fr-gap.html">B — fixe + fr + gap</a>
+      <a href="gap.html">C — gap</a>
+      <a href="minmax.html">D — minmax</a>
+      <a href="fit-content.html">E — fit-content</a>
+      <a href="min-max-content.html">F — min/max-content</a>
+      <a href="template-areas.html">G — template-areas</a>
+      <a href="auto-fit-fill.html">H — auto-fit vs auto-fill</a>
+      <a href="auto-flow-column.html">I — auto-flow: column</a>
+      <a href="alignment.html">J — alignements</a>
+    </div>
+    
+  </header>
+  <main class="page">
+    
+    <section class="section">
+      <h2>G — <code>grid-template-areas</code></h2>
+      <p class="explain">Disposition déclarative : donnez des noms aux zones pour exprimer visuellement le layout.</p>
+      <div class="demo demo-areas">
+        <header>En‑tête</header>
+        <nav>Navigation</nav>
+        <main>Contenu principal</main>
+        <aside>Aside</aside>
+        <footer>Pied de page</footer>
+      </div>
+      <p class="note">En mobile, redéclarez <code>grid-template-areas</code> en une seule colonne pour empiler les zones.</p>
+    </section>
+    
+    <button class="btn-toggle" data-target="template-areas-html">Voir le code</button>
+    <div class="code-block" id="template-areas-html">
+      <pre><code>&lt;div class=&quot;demo demo-areas&quot;&gt;
+  &lt;header&gt;En‑tête&lt;/header&gt;
+  &lt;nav&gt;Navigation&lt;/nav&gt;
+  &lt;main&gt;Contenu principal&lt;/main&gt;
+  &lt;aside&gt;Aside&lt;/aside&gt;
+  &lt;footer&gt;Pied de page&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <button class="btn-toggle" data-target="template-areas-css">Voir le code</button>
+    <div class="code-block" id="template-areas-css">
+      <pre><code>.demo-areas{ display:grid; grid-template-columns:1fr 3fr 1fr; grid-template-rows:auto 1fr auto; gap:12px;
+  grid-template-areas:&quot;header header header&quot; &quot;nav main aside&quot; &quot;footer footer footer&quot;; }
+.demo-areas header{ grid-area:header; }
+.demo-areas nav{ grid-area:nav; }
+.demo-areas main{ grid-area:main; }
+.demo-areas aside{ grid-area:aside; }
+.demo-areas footer{ grid-area:footer; }</code></pre>
+    </div>
+    
+    <a class="back" href="../index.html">← Retour à l’index</a>
+  </main>
+</body>
+</html>
