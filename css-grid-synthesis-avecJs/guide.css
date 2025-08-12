@@ -53,14 +53,20 @@ body{ font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
 
 /* G — grid-template-areas */
 .demo-areas{ display:grid; grid-template-columns:1fr 3fr 1fr; grid-template-rows:auto 1fr auto; gap:12px;
-             grid-template-areas:"header header header" "nav main aside" "footer footer footer"; }
+  grid-template-areas:"header header header" "nav main aside" "footer footer footer"; }
 .demo-areas header{ grid-area:header; background:#dff7e8; border:1px solid #b7e7c8; border-radius:8px; padding:var(--pad); }
 .demo-areas nav   { grid-area:nav;    background:#e8e8ff; border:1px solid #cacaFF; border-radius:8px; padding:var(--pad); }
 .demo-areas main  { grid-area:main;   background:#fffbe6; border:1px solid #f2e2a2; border-radius:8px; padding:var(--pad); }
 .demo-areas aside { grid-area:aside;  background:#fdeef6; border:1px solid #f3c0dc; border-radius:8px; padding:var(--pad); }
 .demo-areas footer{ grid-area:footer; background:#e6f2ff; border:1px solid #bfd8ff; border-radius:8px; padding:var(--pad); }
 
-/* H — auto-fit vs auto-fill */
+.demo-areas-mobile{ display:grid; grid-template-columns:1fr; gap:12px;
+  grid-template-areas:"header" "nav" "main" "aside" "footer"; }
+.demo-areas-mobile header{ grid-area:header; background:#dff7e8; border:1px solid #b7e7c8; border-radius:8px; padding:var(--pad); }
+.demo-areas-mobile nav   { grid-area:nav;    background:#e8e8ff; border:1px solid #cacaFF; border-radius:8px; padding:var(--pad); }
+.demo-areas-mobile main  { grid-area:main;   background:#fffbe6; border:1px solid #f2e2a2; border-radius:8px; padding:var(--pad); }
+.demo-areas-mobile aside { grid-area:aside;  background:#fdeef6; border:1px solid #f3c0dc; border-radius:8px; padding:var(--pad); }
+.demo-areas-mobile footer{ grid-area:footer; background:#e6f2ff; border:1px solid #bfd8ff; border-radius:8px; padding:var(--pad); }/* H — auto-fit vs auto-fill */
 .flex-wrap{ display:flex; gap:16px; flex-wrap:wrap; }
 .gallery{ display:grid; gap:12px; flex:1 1 320px; border:1px solid var(--bd); padding:var(--pad); background:#fff; max-width:600px; }
 .gallery.fit { grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); background:#f0f9ff; border-color:#bfe7ff; }
