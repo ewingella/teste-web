@@ -118,3 +118,8 @@ pre code{ font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Libera
 h1 code, h2 code, h3 code{ background:#eef2ff; padding:0 4px; border-radius:6px; }
 a.button{ border:1px solid var(--bd); border-radius:8px; padding:6px 10px; text-decoration:none; }
 a.button:hover{ border-color:#c7d2fe; background:#eff6ff; }
+
+/* Auto-flow comparison styles */
+.auto-flow-comparison{ flex: 1 1 300px; }
+.auto-flow-comparison h4{ margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+.demo-auto-flow-row{ display: grid; grid-template-columns: repeat(3, 160px); grid-auto-flow: row; gap: 12px; }
