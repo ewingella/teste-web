@@ -85,46 +85,7 @@
         </div>
       </div>
       
-      <h3>3. Les 4 combinaisons en action</h3>
-      <div class="four-props">
-        <div class="prop-demo">
-          <h4>justify-items</h4>
-          <p>→ dans cellule</p>
-          <div class="mini-grid justify-items-demo">
-            <div class="mini-cell">A</div>
-            <div class="mini-cell">B</div>
-          </div>
-        </div>
-        
-        <div class="prop-demo">
-          <h4>align-items</h4>
-          <p>↓ dans cellule</p>
-          <div class="mini-grid align-items-demo">
-            <div class="mini-cell">A</div>
-            <div class="mini-cell">B</div>
-          </div>
-        </div>
-        
-        <div class="prop-demo">
-          <h4>justify-content</h4>
-          <p>→ distribution</p>
-          <div class="mini-grid justify-content-demo">
-            <div class="mini-cell">A</div>
-            <div class="mini-cell">B</div>
-          </div>
-        </div>
-        
-        <div class="prop-demo">
-          <h4>align-content</h4>
-          <p>↓ distribution</p>
-          <div class="mini-grid align-content-demo">
-            <div class="mini-cell">A</div>
-            <div class="mini-cell">B</div>
-          </div>
-        </div>
-      </div>
-      
-      <h3>4. Valeurs courantes</h3>
+      <h3>3. Valeurs courantes</h3>
       <div class="values-grid">
         <div class="value-group">
           <h4>Pour items :</h4>
@@ -148,6 +109,65 @@
       </div>
       
       <p class="note">💡 <strong>Astuce :</strong> <code>place-items</code> = raccourci pour align-items + justify-items | <code>place-content</code> = raccourci pour align-content + justify-content</p>
+      
+      <h3>4. Démo interactive</h3>
+      <p>Explorez toutes les combinaisons d'alignement en temps réel :</p>
+      
+      <div class="demo">
+        <div class="interactive-demo">
+          <div class="controls">
+            <fieldset class="control-group">
+              <legend>1. Axe</legend>
+              <label class="radio-label">
+                <input type="radio" name="axis" value="justify" checked> 
+                <span class="radio-text">justify (→)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="axis" value="align"> 
+                <span class="radio-text">align (↓)</span>
+              </label>
+            </fieldset>
+            
+            <fieldset class="control-group">
+              <legend>2. Cible</legend>
+              <label class="radio-label">
+                <input type="radio" name="target" value="items" checked> 
+                <span class="radio-text">items (cellules)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="target" value="content"> 
+                <span class="radio-text">content (grille)</span>
+              </label>
+            </fieldset>
+            
+            <fieldset class="control-group">
+              <legend>3. Valeur</legend>
+              <select id="value-select" class="value-selector">
+                <option value="start">start</option>
+                <option value="center">center</option>
+                <option value="end">end</option>
+                <option value="stretch">stretch</option>
+                <option value="space-between">space-between</option>
+                <option value="space-around">space-around</option>
+                <option value="space-evenly">space-evenly</option>
+              </select>
+            </fieldset>
+          </div>
+          
+          <div class="result">
+            <h4 id="property-display" class="current-property">justify-items: start</h4>
+            <div class="demo-grid-container">
+              <div class="demo-grid" id="interactive-grid">
+                <div class="demo-item">A</div>
+                <div class="demo-item">B</div>
+                <div class="demo-item">C</div>
+                <div class="demo-item">D</div>
+              </div>
+            </div>
+            <p class="demo-explanation" id="explanation">Position des éléments dans leurs cellules</p>
+          </div>
+        </div>
+      </div>
     </section>
     
     <button class="btn-toggle" data-target="alignment-html">Voir le code HTML</button>

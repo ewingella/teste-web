@@ -65,4 +65,83 @@ document.addEventListener("DOMContentLoaded", () => {
     block.style.height = "0px";
     btn.addEventListener("click", () => toggle(btn, block));
   });
+
+  // Interactive Demo Functionality
+  function initInteractiveDemo() {
+    const grid = document.getElementById('interactive-grid');
+    const propertyDisplay = document.getElementById('property-display');
+    const explanation = document.getElementById('explanation');
+    const valueSelect = document.getElementById('value-select');
+    
+    if (!grid || !propertyDisplay || !explanation || !valueSelect) return;
+    
+    const explanations = {
+      'justify-items': 'Position des éléments horizontalement dans leurs cellules',
+      'align-items': 'Position des éléments verticalement dans leurs cellules',
+      'justify-content': 'Distribution horizontale de la grille dans son container',
+      'align-content': 'Distribution verticale de la grille dans son container'
+    };
+    
+    function updateDemo() {
+      const axis = document.querySelector('input[name="axis"]:checked')?.value || 'justify';
+      const target = document.querySelector('input[name="target"]:checked')?.value || 'items';
+      const value = valueSelect.value;
+      
+      const property = `${axis}-${target}`;
+      
+      // Reset all alignment styles
+      grid.style.justifyItems = '';
+      grid.style.alignItems = '';
+      grid.style.justifyContent = '';
+      grid.style.alignContent = '';
+      
+      // Apply the selected style
+      const camelCaseProperty = property.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+      grid.style[camelCaseProperty] = value;
+      
+      // Update display
+      propertyDisplay.textContent = `${property}: ${value}`;
+      explanation.textContent = explanations[property] || 'Propriété d\'alignement CSS Grid';
+      
+      // Update available values based on target
+      updateAvailableValues(target);
+    }
+    
+    function updateAvailableValues(target) {
+      const itemsValues = ['start', 'center', 'end', 'stretch'];
+      const contentValues = ['start', 'center', 'end', 'space-between', 'space-around', 'space-evenly'];
+      
+      const availableValues = target === 'items' ? itemsValues : contentValues;
+      const currentValue = valueSelect.value;
+      
+      // Clear and repopulate options
+      valueSelect.innerHTML = '';
+      availableValues.forEach(val => {
+        const option = document.createElement('option');
+        option.value = val;
+        option.textContent = val;
+        valueSelect.appendChild(option);
+      });
+      
+      // Restore value if still available, otherwise use first available
+      if (availableValues.includes(currentValue)) {
+        valueSelect.value = currentValue;
+      } else {
+        valueSelect.value = availableValues[0];
+      }
+    }
+    
+    // Event listeners
+    document.querySelectorAll('input[name="axis"], input[name="target"]').forEach(input => {
+      input.addEventListener('change', updateDemo);
+    });
+    
+    valueSelect.addEventListener('change', updateDemo);
+    
+    // Initialize
+    updateDemo();
+  }
+  
+  // Initialize interactive demo
+  initInteractiveDemo();
 });
