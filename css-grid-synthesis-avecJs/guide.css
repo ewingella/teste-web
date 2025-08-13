@@ -156,53 +156,46 @@ body{ font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
 }
 
 .target-demo {
-  flex: 1;
+  /* flex: 1; */
   min-width: 250px;
 }
 
-.items-container {
+.items-container,
+.content-container {
   display: grid;
-  grid-template-columns: repeat(2, 80px);
-  grid-template-rows: 60px;
-  gap: 10px;
-  justify-items: start;
+  grid-template-columns: repeat(2, 100px);
+  grid-auto-rows: repeat(2, 60px);
   border: 2px dashed #7c3aed;
   background: #faf5ff;
-  padding: 15px;
+  gap: 10px;
+  width: 300px;
+  height: 300px;
+  position: relative;
 }
 
-.item-cell {
+.items-container{
+  justify-items: start;
+  /* Items container */
+}
+.content-container{
+  justify-content: center;
+  align-content: center;
+  /* Content container */
+}
+
+.item-cell,.content-track {
   background: #e9d5ff;
   border: 2px solid #7c3aed;
   border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   font-weight: bold;
-  width: 60px;
+  width: 80px;
   height: 40px;
-}
 
-.content-container {
-  display: grid;
-  grid-template-columns: repeat(2, 60px);
-  grid-template-rows: 50px;
-  gap: 10px;
-  justify-content: center;
-  width: 200px;
-  border: 2px dashed #059669;
-  background: #f0fdf4;
-  padding: 15px;
 }
 
 .content-track {
-  background: #bbf7d0;
-  border: 2px solid #059669;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+   background: #bbf7d0;
 }
 
 .demo-note {
@@ -320,18 +313,6 @@ body{ font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial
   font-weight: 600;
   color: var(--accent);
 }
-
-/* Legacy styles for compatibility */
-.align-grid{ display:grid; grid-template-columns:repeat(3,120px); grid-auto-rows:90px; gap:12px; }
-.align-grid .cell{ background:#e9eef9; border:1px solid #cfd6e4; border-radius:8px; display:flex; align-items:center; justify-content:center; }
-.align-grid{ place-items:stretch center; }
-.align-grid .cell:nth-child(2){ place-self:start end; }
-.align-grid .cell:nth-child(3){ align-self:center; }
-.align-grid .cell:nth-child(4){ justify-self:start; }
-
-.align-wrapper{ display:grid; grid-template-columns:repeat(3,140px); grid-template-rows:repeat(2,100px); gap:16px; height:380px; width:700px;
-                justify-content:space-between; align-content:center; border:1px dashed #cbd5e1; padding:12px; border-radius:12px; }
-.track{ background:#fff; border:1px solid #e5e7eb; border-radius:8px; }
 
 /* --- JS Toggle buttons (icons + animation) --- */
 .btn-toggle{
