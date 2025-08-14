@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Grid — auto-flow-column</title>
+  <link rel="stylesheet" href="../guide.css" />
+  <script src="../guide.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>CSS Grid — auto-flow-column</h1>
+    <p>Projet de synthèse — CSS Grid : démos structurées + explications.</p>
+    
+    <div class="nav">
+      <a href="../index.html">Accueil</a>
+      <a href="fr.html">A — fr</a>
+      <a href="fixed-fr-gap.html">B — fixe + fr + gap</a>
+      <a href="gap.html">C — gap</a>
+      <a href="minmax.html">D — minmax</a>
+      <a href="fit-content.html">E — fit-content</a>
+      <a href="min-max-content.html">F — min/max-content</a>
+      <a href="template-areas.html">G — template-areas</a>
+      <a href="auto-fit-fill.html">H — auto-fit vs auto-fill</a>
+      <a href="auto-flow-column.html">I — auto-flow: column</a>
+      <a href="alignment.html">J — alignements</a>
+    </div>
+    
+  </header>
+  <main class="page">
+    
+    <section class="section">
+      <h2>I — <code>grid-auto-flow: column</code></h2>
+      <p class="explain">Auto-placement vertical (haut → bas), création de colonnes implicites à droite. Les items qui "span" plusieurs lignes peuvent laisser des trous.</p>
+      
+      <h3>Comparaison : comportement par défaut vs auto-flow: column</h3>
+      <p><span style="color: #ff6b6b;">●</span> <strong>row (défaut)</strong> : remplit ligne par ligne → <span style="color: #4ecdc4;">●</span> <strong>column</strong> : remplit colonne par colonne</p>
+      
+      <div class="demo flex-wrap">
+        <div class="auto-flow-comparison">
+          <h4>grid-auto-flow: <strong>row</strong> (défaut)</h4>
+          <div class="demo-auto-flow-row">
+            <div class="cell">1</div>
+            <div class="cell">2</div>
+            <div class="cell span-2">3</div>
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+            <div class="cell">6</div>
+          </div>
+        </div>
+        
+        <div class="auto-flow-comparison">
+          <h4>grid-auto-flow: <strong>column</strong></h4>
+          <div class="demo-auto-flow-col">
+            <div class="cell">1</div>
+            <div class="cell">2</div>
+            <div class="cell span-2">3</div>
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+            <div class="cell">6</div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="note">Observez comment les mêmes éléments se placent différemment : <strong>row</strong> va de gauche à droite puis ligne suivante, <strong>column</strong> va de haut en bas puis colonne suivante.</p>
+    </section>
+    
+    <button class="btn-toggle" data-target="auto-flow-column-html">Voir le code HTML</button>
+    <div class="code-block" id="auto-flow-column-html">
+      <pre><code>&lt;div class=&quot;demo-auto-flow-row&quot;&gt;
+  &lt;div class=&quot;cell&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;cell span-2&quot;&gt;3&lt;/div&gt;
+  &lt;!-- ... --&gt;
+&lt;/div&gt;
+&lt;div class=&quot;demo-auto-flow-col&quot;&gt;
+  &lt;div class=&quot;cell&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;cell&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;cell span-2&quot;&gt;3&lt;/div&gt;
+  &lt;!-- ... --&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <button class="btn-toggle" data-target="auto-flow-column-css">Voir le code CSS</button>
+    <div class="code-block" id="auto-flow-column-css">
+      <pre><code>.demo-auto-flow-row{ 
+  display: grid; 
+  grid-template-columns: repeat(3, 160px); 
+  grid-auto-flow: row; /* défaut */
+  gap: 12px; 
+}
+.demo-auto-flow-col{ 
+  display: grid; 
+  grid-template-rows: repeat(3, 80px); 
+  grid-auto-flow: column; 
+  grid-auto-columns: 160px; 
+  gap: 12px; 
+}
+.span-2{ grid-row: span 2; }</code></pre>
+    </div>
+    
+    <a class="back" href="../index.html">← Retour à l'index</a>
+  </main>
+</body>
+</html>
