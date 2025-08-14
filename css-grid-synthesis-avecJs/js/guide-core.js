@@ -1,5 +1,5 @@
+// Guide Core - Fonctionnalités des boutons toggle
 
-// Guide principal - inclut seulement les boutons toggle pour les pages standard
 document.addEventListener("DOMContentLoaded", () => {
   function expand(block){
     block.classList.add("measuring");
