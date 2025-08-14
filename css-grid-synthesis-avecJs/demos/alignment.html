@@ -165,10 +165,36 @@
               </div>
             </div>
             <p class="demo-explanation" id="explanation">Position des éléments dans leurs cellules</p>
+            <button class="code-viewer-btn" id="show-code-btn">📝 Voir le code complet</button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Code Viewer Modal -->
+    <div class="code-modal" id="code-modal">
+      <div class="code-modal-content">
+        <div class="code-modal-header">
+          <h3>Code de la démo interactive</h3>
+          <button class="code-modal-close" id="close-modal-btn">&times;</button>
+        </div>
+        
+        <div class="code-tabs">
+          <button class="code-tab active" data-tab="css">CSS</button>
+          <button class="code-tab" data-tab="html">HTML</button>
+        </div>
+        
+        <div class="code-content">
+          <div class="code-panel active" id="css-panel">
+            <pre><code id="dynamic-css-code">/* CSS sera généré dynamiquement */</code></pre>
+          </div>
+          
+          <div class="code-panel" id="html-panel">
+            <pre><code id="dynamic-html-code"><!-- HTML sera généré dynamiquement --></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <button class="btn-toggle" data-target="alignment-html">Voir le code HTML</button>
     <div class="code-block" id="alignment-html">
